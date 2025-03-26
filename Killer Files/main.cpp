@@ -21,7 +21,7 @@ int main(){
     
     while(isGoing){
         std::cout << "Inserisci il path della cartella";
-        std::cin >> pathCartella;
+        std::getline(std::cin, pathCartella);
 
         while(true){
             std::cout << "Scegliere azione \n";
@@ -43,13 +43,13 @@ int main(){
 
                 case 3:
                     std::cout << "Come vuoi rinominare la cartella?";
-                    std::cin >> ren;
+                    std::getline(std::cin, ren);
                     rinominaCartella(pathCartella, ren);
                     break;
 
                 case 4:
                     std::cout << "Come vuoi rinominare i files?";
-                    std::cin >> ren;
+                    std::getline(std::cin, ren);
                     rinominaDentroCartella(pathCartella, ren);
                     break;
                     
@@ -63,7 +63,7 @@ int main(){
 
             if(end == "N"){}
             else{//Se non risponde N interrompe l'esecuzione
-                isGoing == false;
+                isGoing = false;
             }
         }
 
